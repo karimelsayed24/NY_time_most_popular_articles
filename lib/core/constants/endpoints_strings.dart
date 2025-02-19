@@ -1,4 +1,3 @@
-//https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=
 
 abstract class EndpointsStrings {
   static const String baseUrl = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/';
