@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ny_time_most_popular_articles/feature/most_popular/articles_app.dart';
+import 'package:ny_time_most_popular_articles/feature/articles_app.dart';
 
 
 void main() {

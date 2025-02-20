@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 import 'package:ny_time_most_popular_articles/core/routes/router_names.dart';
 import 'package:ny_time_most_popular_articles/core/theme/app_colors.dart';
 import 'package:ny_time_most_popular_articles/core/utils/app_styles.dart';
@@ -18,18 +17,12 @@ class ArticleListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String thumbnailUrl = 'https://via.placeholder.com/75';
+    String thumbnailUrl = 'https://th.bing.com/th/id/OIP.WNnJIo0sDXD2MnRSE9SREwAAAA?rs=1&pid=ImgDetMain';
     if (article.media.isNotEmpty && article.media[0].mediaMetadata.isNotEmpty) {
       thumbnailUrl = article.media[0].mediaMetadata[0].url;
     }
 
-    String formattedDate = '';
-    try {
-      final originalDate = DateTime.parse(article.publishedDate);
-      formattedDate = DateFormat('yyyy-MM-dd').format(originalDate);
-    } catch (e) {
-      formattedDate = article.publishedDate;
-    }
+   
 
     return InkWell(
       onTap: () {
@@ -40,7 +33,6 @@ class ArticleListItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Thumbnail
             ClipRRect(
               borderRadius: BorderRadius.circular(37.5.r),
               child: Image.network(
@@ -90,8 +82,7 @@ class ArticleListItem extends StatelessWidget {
                           color: AppColors.greyForText,
                         ),
                         Text(
-                          
-                          formattedDate,
+                           article.publishedDate,
                           style: AppStyles.s12.copyWith(
                             color: AppColors.greyForText,
                           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../components/most_popular_article_components.dart';
 import '../logic/article_cubit.dart';
 
@@ -10,11 +11,11 @@ class MostPopularArticleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.lightGreen,
+        backgroundColor: AppColors.primaryColor,
         title: const Text(
-          'NY Times Most Popular',
+          AppStrings.appBarTitle,
           style: TextStyle(color: AppColors.white),
         ),
         actions: [

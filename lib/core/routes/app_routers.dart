@@ -13,7 +13,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: RouterNames.mostPopularArticleView,
       builder: (context, state) => BlocProvider(
-        create: (context) => getIt<ArticlesCubit>(),
+        create: (context) => getIt<ArticlesCubit>()..getMostPopularArticleUc(1),
         child: const MostPopularArticleView(),
       ),
     ),
