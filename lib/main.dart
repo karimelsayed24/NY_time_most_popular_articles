@@ -9,7 +9,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator(); 
   await getIt<CacheHelper>().init(); 
-  //await EasyLocalization.ensureInitialized();
 
   runApp(
     const ArticleApp(),

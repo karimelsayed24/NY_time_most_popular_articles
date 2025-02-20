@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_styles.dart';
@@ -15,13 +14,18 @@ class ByLineAndDateRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Text(
-        byline,
-        overflow: TextOverflow.ellipsis,
-        style: AppStyles.s14,
-      ),
-      Text(publishedDate, style: AppStyles.s14),
-    ]);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Flexible(
+          child: Text(
+            byline,
+            overflow: TextOverflow.ellipsis,
+            style: AppStyles.s14,
+          ),
+        ),
+        Text(publishedDate, style: AppStyles.s14),
+      ],
+    );
   }
 }

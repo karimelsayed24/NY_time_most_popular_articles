@@ -3,8 +3,8 @@ import 'package:ny_time_most_popular_articles/core/data/api/api_consumer.dart';
 import 'package:ny_time_most_popular_articles/core/errors/error_model.dart';
 import 'package:ny_time_most_popular_articles/core/errors/exceptions.dart';
 
-import '../../../../core/constants/endpoints_strings.dart';
-import '../model/article_response.dart';
+import '../../../../../core/constants/endpoints_strings.dart';
+import '../../model/article_response.dart';
 
 abstract class ArticleApiServices {
   Future<Either<ErrorModel, ArticleResponse>> getMostPopularArticles(
@@ -23,7 +23,6 @@ class ArticleApiServicesImpl implements ArticleApiServices {
       final articleResponse = ArticleResponse.fromJson(response);
       return Right(articleResponse);
     } on ServerException catch (e) {
-      print("//------------------${e.errorModel}");
       return Left(e.errorModel);
     }
   }

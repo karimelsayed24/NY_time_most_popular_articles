@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import '../../constants/endpoints_strings.dart';
 import '../../errors/exceptions.dart';
-import '../cached/cache_helper.dart';
 import 'api_consumer.dart';
 
 class DioConsumer extends ApiConsumer {
@@ -26,7 +25,6 @@ class DioConsumer extends ApiConsumer {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final token = CacheHelper.getToken();
       final response = await dio.get(
         path,
         queryParameters: queryParameters,
@@ -53,7 +51,6 @@ class DioConsumer extends ApiConsumer {
     bool isFormData = false,
   }) async {
     try {
-      final token = CacheHelper.getToken();
 
       final requestData = isFormData
           ? (data is Map<String, dynamic> ? FormData.fromMap(data) : data)
@@ -88,7 +85,6 @@ class DioConsumer extends ApiConsumer {
     bool isFormData = false,
   }) async {
     try {
-      final token = CacheHelper.getToken();
       final response = await dio.patch(
         path,
         data:
@@ -114,7 +110,6 @@ class DioConsumer extends ApiConsumer {
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? headers,
       bool isFormData = false}) async {
-    final token = CacheHelper.getToken();
     final response = await dio.put(
       path,
       data: isFormData ? FormData.fromMap(data as Map<String, dynamic>) : data,
@@ -139,7 +134,6 @@ class DioConsumer extends ApiConsumer {
     bool isFormData = false,
   }) async {
     try {
-      final token = CacheHelper.getToken();
       final response = await dio.delete(
         path,
         data:

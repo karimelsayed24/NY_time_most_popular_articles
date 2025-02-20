@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/errors/error_model.dart';
 import '../../data/model/article_response.dart';
-import '../../data/remote/article_remote_ds.dart';
+import '../../data/data_source/remote/article_remote_ds.dart';
 
 abstract class ArticleRepository {
   Future<Either<ErrorModel, ArticleResponse>> getMostPopularArticles(

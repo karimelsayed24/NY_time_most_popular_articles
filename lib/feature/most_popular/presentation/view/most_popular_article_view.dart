@@ -21,7 +21,7 @@ class MostPopularArticleView extends StatelessWidget {
         actions: [
           PopupMenuButton<int>(
             onSelected: (period) {
-              context.read<ArticlesCubit>().getMostPopularArticleUc(period);
+              context.read<ArticlesCubit>().getMostPopularArticle(period);
             },
             itemBuilder: (context) => [
               const PopupMenuItem(

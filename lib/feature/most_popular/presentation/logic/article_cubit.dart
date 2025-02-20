@@ -8,7 +8,7 @@ class ArticlesCubit extends Cubit<ArticlesState> {
 
   ArticlesCubit(this._getMostPopularUseCase) : super(const ArticlesState.initial());
 
-  Future<void> getMostPopularArticleUc(int period ) async {
+  Future<void> getMostPopularArticle(int period ) async {
     emit(const ArticlesState.loading());
     final result = await _getMostPopularUseCase.call(period);
     result.fold(

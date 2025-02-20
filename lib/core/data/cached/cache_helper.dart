@@ -2,27 +2,11 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../services/service_locator.dart';
-
 class CacheHelper {
   static late SharedPreferences sharedPreferences;
 
   init() async {
     sharedPreferences = await SharedPreferences.getInstance();
-  }
-    final Future<SharedPreferences> _prefs = getIt.getAsync<SharedPreferences>();
-  static const String _languageKey = 'language';
-
-  static void saveToken({required String value}) {
-    sharedPreferences.setString('token', value);
-  }
-//delete token
-  static void deleteToken() {
-    sharedPreferences.remove('token');
-  }
-  
-  static String? getToken() {
-    return sharedPreferences.getString('token');
   }
 
   String? getDataString({
@@ -90,14 +74,5 @@ class CacheHelper {
       return jsonDecode(jsonString);
     }
     return null;
-  }
-     Future<String?> get language async {
-    final prefs = await _prefs;
-    return prefs.getString(_languageKey);
-  }
-
-  Future<void> setLanguage(String value) async {
-    final prefs = await _prefs;
-    await prefs.setString(_languageKey, value);
   }
 }

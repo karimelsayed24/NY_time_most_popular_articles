@@ -13,14 +13,18 @@ class MostPopularArticleComponents extends StatelessWidget {
     return BlocBuilder<ArticlesCubit, ArticlesState>(
       builder: (context, state) {
         return state.when(
-          initial: () =>
-              const Center(child: Text('Select a period to load articles')),
-          loading: () => const Center(child: CircularProgressIndicator()),
+          initial: () => const Center(
+            child: Text('Select a period to load articles'),
+          ),
+          loading: () => const Center(
+            child: CircularProgressIndicator(),
+          ),
           success: (response) => ArticleList(
             response: response,
           ),
-          error: (error) =>
-              Center(child: Text('Error: ${error.fault.faultstring}')),
+          error: (error) => Center(
+            child: Text('Error: ${error.fault.faultstring}'),
+          ),
         );
       },
     );

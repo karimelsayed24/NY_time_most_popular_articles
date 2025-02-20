@@ -33,7 +33,7 @@ class ImageAndSourceColumn extends StatelessWidget {
               return Container(
                 width: double.infinity,
                 height: 220,
-                color: AppColors.greyForSelectTap,
+                color: AppColors.greyForBackground,
                 child: Icon(Icons.image_not_supported, size: 50.r),
               );
             },

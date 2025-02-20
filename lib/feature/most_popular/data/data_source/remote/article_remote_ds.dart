@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/errors/error_model.dart';
-import '../model/article_response.dart';
+import '../../../../../core/errors/error_model.dart';
+import '../../model/article_response.dart';
 import 'article_api_services.dart';
 
 abstract class ArticleRemoteDs {
